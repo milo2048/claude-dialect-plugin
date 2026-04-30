@@ -5,13 +5,13 @@ Switch Claude's writing style between fun dialects.
 ## Installation
 
 ```bash
-claude plugin add dialect
+claude plugin install /path/to/claude-dialect-plugin --scope user
 ```
 
-Or clone this repo and install locally:
+Or try it out for a single session without installing:
 
 ```bash
-claude plugin add /path/to/claude-dialect-plugin
+claude --plugin-dir /path/to/claude-dialect-plugin
 ```
 
 ## Usage
