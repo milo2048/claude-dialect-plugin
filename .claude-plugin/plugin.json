@@ -1,0 +1,15 @@
+{
+  "name": "dialect",
+  "description": "Switch Claude's writing style between fun dialects",
+  "version": "1.0.0",
+  "author": {
+    "name": "Miles Thomason"
+  },
+  "license": "MIT",
+  "keywords": [
+    "dialect",
+    "writing-style",
+    "personality",
+    "fun"
+  ]
+}
