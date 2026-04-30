@@ -33,7 +33,7 @@ escape_for_json() {
     local text="$1"
     text="${text//\\/\\\\}"
     text="${text//\"/\\\"}"
-    text=$(printf '%s' "$text" | sed ':a;N;$!ba;s/\n/\\n/g')
+    text=$(printf '%s' "$text" | perl -pe 's/\n/\\n/g' 2>/dev/null || printf '%s' "$text" | awk '{printf "%s\\n", $0}' | sed 's/\\n$//')
     text="${text//$'\r'/\\r}"
     text="${text//$'\t'/\\t}"
     printf '%s' "$text"
