@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+# Reinforce active dialect by injecting Quick Reference rules on each user message.
+# Outputs JSON with additionalContext for Claude Code's hook system.
+
+set -euo pipefail
+
+STATE_FILE="${HOME}/.claude/plugins/data/dialect/active-dialect.txt"
+
+# If no active dialect, exit silently (no output = no context injected)
+if [ ! -f "$STATE_FILE" ]; then
+    exit 0
+fi
+
+DIALECT_NAME=$(cat "$STATE_FILE")
+PLUGIN_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+DIALECT_FILE="${PLUGIN_ROOT}/dialects/${DIALECT_NAME}.md"
+
+# If dialect file doesn't exist, exit silently
+if [ ! -f "$DIALECT_FILE" ]; then
+    exit 0
+fi
+
+# Extract the Quick Reference section (between "## Quick Reference" and the next "## ")
+QUICK_REF=$(sed -n '/^## Quick Reference$/,/^## /{/^## Quick Reference$/d;/^## /d;p;}' "$DIALECT_FILE")
+
+# If no quick reference found, exit silently
+if [ -z "$QUICK_REF" ]; then
+    exit 0
+fi
+
+# Escape for JSON embedding
+escape_for_json() {
+    local text="$1"
+    text="${text//\\/\\\\}"
+    text="${text//\"/\\\"}"
+    text=$(printf '%s' "$text" | sed ':a;N;$!ba;s/\n/\\n/g')
+    text="${text//$'\r'/\\r}"
+    text="${text//$'\t'/\\t}"
+    printf '%s' "$text"
+}
+
+CONTEXT="ACTIVE DIALECT: ${DIALECT_NAME}. You MUST write all responses in this dialect. Rules:\\n\\n$(escape_for_json "$QUICK_REF")"
+
+# Output JSON for Claude Code hook system
+printf '{"hookSpecificOutput":{"hookEventName":"UserPromptSubmit","additionalContext":"%s"}}' "$CONTEXT"
