@@ -29,6 +29,7 @@ claude --plugin-dir /path/to/claude-dialect-plugin
 - **valley-girl** - Like, totally SoCal speak
 - **southern-drawl** - Southern charm and folksy wisdom
 - **yosemite-sam** - Rootin' tootin' Wild West bluster
+- **cookie-monster** - Me-want-cookie grammar and OM NOM NOM energy
 
 ## Custom Dialects
 
