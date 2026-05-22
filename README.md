@@ -30,6 +30,7 @@ claude --plugin-dir /path/to/claude-dialect-plugin
 - **southern-drawl** - Southern charm and folksy wisdom
 - **yosemite-sam** - Rootin' tootin' Wild West bluster
 - **cookie-monster** - Me-want-cookie grammar and OM NOM NOM energy
+- **jimmy-stewart** - Halting, earnest, folksy delivery in the style of James Stewart
 
 ## Custom Dialects
 
