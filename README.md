@@ -32,6 +32,9 @@ claude --plugin-dir /path/to/claude-dialect-plugin
 - **cookie-monster** - Me-want-cookie grammar and OM NOM NOM energy
 - **jimmy-stewart** - Halting, earnest, folksy delivery in the style of James Stewart
 - **macho-man** - Randy Savage-style swagger, "OOH YEAH!" bombast, and wrestling metaphors
+- **the-dude** - Jeffrey Lebowski's drifty, reactive deadpan; bowling and White Russians as metaphor
+- **walter** - Walter Sobchak's volcanic Vietnam-vet rules-obsession with unprompted Donny outbursts
+- **mr-lebowski** - The Big Lebowski's pompous Achievers-vs-bums bluster and rhetorical-question rants
 
 ## Custom Dialects
 
