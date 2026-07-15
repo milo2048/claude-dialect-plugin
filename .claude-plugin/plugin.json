@@ -1,7 +1,7 @@
 {
   "name": "dialect",
   "description": "Switch Claude's writing style between fun dialects",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "author": {
     "name": "Miles Thomason"
   },
