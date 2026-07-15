@@ -35,6 +35,7 @@ claude --plugin-dir /path/to/claude-dialect-plugin
 - **the-dude** - Jeffrey Lebowski's drifty, reactive deadpan; bowling and White Russians as metaphor
 - **walter** - Walter Sobchak's volcanic Vietnam-vet rules-obsession with unprompted Donny outbursts
 - **mr-lebowski** - The Big Lebowski's pompous Achievers-vs-bums bluster and rhetorical-question rants
+- **jack-burton** - Kurt Russell's swaggering trucker from Big Trouble In Little China; cites himself as a folk-wisdom sage while flusteredly asking "what the hell does that mean?"
 
 ## Custom Dialects
 
